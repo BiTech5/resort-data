@@ -22,7 +22,7 @@
                 </div>
                 <!-- Sidebar Navigation -->
                 <ul class="sidebar-nav">
-                    
+
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
                             <i class="fa-solid fa-list pe-2"></i>
@@ -30,22 +30,10 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages"
-                            aria-expanded="false" aria-controls="pages">
+                        <a href="#" class="sidebar-link collapsed">
                             <i class="fa-regular fa-file-lines pe-2"></i>
-                            Pages
+                            Form
                         </a>
-                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Analytics</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Ecommerce</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Crypto</a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard"
@@ -117,13 +105,62 @@
             <main class="content px-3 py-2">
                 <div class="container-fluid">
                     <div class="mb-3">
-                        
-                            <div class="login-wrapper">
 
-                            </div>
-                       
-                        
-                </div>
+                        <div class="login-wrapper">
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="inputEmail4" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="inputEmail4">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Contact N.o</label>
+                                    <input type="number" class="form-control" id="inputPassword4">
+                                </div>
+                                <div class="col-12">
+                                    <label for="inputAddress" class="form-label">Arrival</label>
+                                    <input type="text" class="form-control" id="inputAddress"
+                                        >
+                                </div>
+                                <div class="col-12">
+                                    <label for="inputAddress2" class="form-label">Departure</label>
+                                    <input type="text" class="form-control" id="inputAddress2"
+                                        >
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputCity" class="form-label">Pax</label>
+                                    <input type="text" class="form-control" id="inputCity">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="inputState" class="form-label">Stay Type</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="inputZip" class="form-label">Package</label>
+                                    <input type="text" class="form-control" id="inputZip">
+                                </div>
+                                <div class="col-md-7">
+                                    <label for="inputCity" class="form-label">Tariff</label>
+                                    <input type="text" class="form-control" id="inputCity">
+                                </div>
+                                <div class="col-md-5">
+                                    <label for="inputZip" class="form-label">Advance</label>
+                                    <input type="number" class="form-control" id="inputZip">
+                                </div>
+
+
+                                <div class="col-md-12">
+                                        <label for="floatingTextarea">Remarks</label>
+                                        <textarea class="form-control"
+                                            id="floatingTextarea" style="background-color: transparent;"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Add Data</button>
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
             </main>
         </div>
     </div>
