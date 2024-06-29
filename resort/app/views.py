@@ -8,4 +8,16 @@ def home(request):
 
 
 def add_data(request):
+    if request.method=='POST':
+        name=request.POST.get('name')
+        contact=request.POST.get('contact')
+        arrival=request.POST.get('arrival')
+        departure=request.POST.get('departure')
+        pax=request.POST.get('pax')
+        stay=request.POST.get('stay_type')
+        package=request.POST.get('package')
+        tariff=request.POST.get('tariff')
+        advance=request.POST.get('advance')
+        remark=request.POST.get('remark')
+        print(name)
     return render(request,'form.html')
