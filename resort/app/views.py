@@ -22,7 +22,6 @@ def add_data(request):
         advance=request.POST.get('advance')
         remark=request.POST.get('remarks')
         #instance for model data
-        hi=ListView.get_queryset()
         
         customer=CustomerModel(name=name,
                                contect=contact,
