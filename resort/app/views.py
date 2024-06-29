@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
+from .admin import *
+from django.views.generic import ListView , FormView
 # Create your views here.
 def home(request):
     data=CustomerModel.objects.all()
@@ -20,6 +22,8 @@ def add_data(request):
         advance=request.POST.get('advance')
         remark=request.POST.get('remarks')
         #instance for model data
+        hi=ListView.get_queryset()
+        
         customer=CustomerModel(name=name,
                                contect=contact,
                                arrivals=arrival,
@@ -34,3 +38,11 @@ def add_data(request):
         return redirect('home')
         
     return render(request,'form.html')
+
+
+def export_data(request):
+    resource = CustomerAdmin()
+    dataset = resource.export()
+    response = HttpResponse(dataset.xlsx, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename="customer_data.xlsx"'
+    return response
