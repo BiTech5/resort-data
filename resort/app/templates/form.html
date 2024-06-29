@@ -12,7 +12,8 @@
                     <div class="mb-3">
 
                         <div class="login-wrapper">
-                            <form class="row g-3">
+                            {% csrf_token %}
+                            <form class="row g-3" method='POST'>
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Name</label>
                                     <input type="text" class="form-control" id="inputEmail4">
