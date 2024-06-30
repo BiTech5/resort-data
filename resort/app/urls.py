@@ -5,5 +5,6 @@ urlpatterns = [
    path('',views.home,name='home'),
    path('data/',views.add_data,name='data'),
    path('export-data/', views.export_data, name='export_data'),
-   path('delete/<int:id>',views.delete,name='delete')
+   path('delete/<int:id>',views.delete,name='delete'),
+   path('update/<int:id>',views.update,name='update')
 ]
