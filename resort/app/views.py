@@ -24,7 +24,7 @@ def add_data(request):
         #instance for model data
         
         customer=CustomerModel(name=name,
-                               contect=contact,
+                               contact=contact,
                                arrivals=arrival,
                                departure=departure,
                                pax=pax,
@@ -38,7 +38,10 @@ def add_data(request):
         
     return render(request,'form.html')
 
-
+def delete(request, id):
+    dele=CustomerModel.objects.get(id=id)
+    dele.delete()
+    return redirect('home')
 def export_data(request):
     resource = CustomerAdmin()
     dataset = resource.export()

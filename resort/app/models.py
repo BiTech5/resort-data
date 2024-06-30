@@ -3,7 +3,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 class CustomerModel(models.Model):
     name=models.CharField(max_length=100,default=' ')
-    contect=PhoneNumberField(region='NP')
+    contact=PhoneNumberField(region='NP')
     arrivals=models.CharField(max_length=200,default=" ")
     departure=models.CharField(max_length=100,default=' ')
     pax=models.CharField(max_length=100,default=' ')
