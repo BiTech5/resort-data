@@ -3,10 +3,21 @@ from django.http import HttpResponse
 from .models import *
 from .admin import *
 from django.views.generic import ListView , FormView
+from django.db.models import Q
 # Create your views here.
 def home(request):
     data=CustomerModel.objects.all()
-    return render(request,'index.html',{'data':data})
+    query=request.POST.get('search','')
+    result=CustomerModel.objects.filter(
+        Q(name__icontains=query) |
+        Q(contact__icontains=query) |
+        Q(arrivals__icontains=query) |
+        Q(stay_type__icontains=query)
+    )
+    if result:
+        return render(request,'index.html',{'data':result})
+    else:
+        return render(request,'index.html',{'data':data})
 
 
 def add_data(request):
@@ -48,9 +59,9 @@ def export_data(request):
     response = HttpResponse(dataset.xlsx, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename="customer_data.xlsx"'
     return response
-
 def update(request,id):
     data=get_object_or_404(CustomerModel, id=id)
+    
     if request.method=='POST':
         data.name=request.POST.get('name')
         data.contact=(request.POST.get('contact'))
